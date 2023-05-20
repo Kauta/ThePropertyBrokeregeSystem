@@ -1,4 +1,3 @@
-Certainly! Here's the content for the README.md file:
 
 ```markdown
 # Property Brokerage System
@@ -113,7 +112,3 @@ Please ensure that your contributions adhere to the
 
 This project is licensed under the [MIT License](LICENSE).
 ```
-
-You can copy and paste the above content into your README.md file. Make sure to replace the existing content in the file. Remember to commit and push the changes to your GitHub repository.
-
-If you have any further questions or need additional assistance, feel free to ask. Good luck with your project!
