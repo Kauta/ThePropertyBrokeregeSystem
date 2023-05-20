@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>User Details</h1>
+  <dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">{{ user.id }}</dd>
+    <dt class="col-sm-2">Username</dt>
+    <dd class="col-sm-10">{{ user.username }}</dd>
+    <dt class="col-sm-2">Email</dt>
+    <dd class="col-sm-10">{{ user.email }}</dd>
+    <dt class="col-sm-2">Sex</dt>
+    <dd class="col-sm-10">{{ user.sex }}</dd>
+    <dt class="col-sm-2">Address</dt>
+    <dd class="col-sm-10">{{ user.address }}</dd>
+  </dl>
+  <a href="{{ url_for('user.list') }}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

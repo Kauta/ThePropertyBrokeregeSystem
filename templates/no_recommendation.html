@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">No Recommendations Found</h1>
+                        <p class="card-text">Sorry, we couldn't find any recommendations based on your search criteria.</p>
+                        <p class="card-text">Please try different keywords or location.</p>
+                        <div class="text-center">
+                            <a class="button ripple-effect" href="{{ url_for('index') }}">Use Another Search criteria</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

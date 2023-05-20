@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <ul class="popup-tabs-nav">
+        <li><a href="#login">Login</a></li>
+    </ul>
+    <div class="popup-tabs-container">
+        <div class="popup-tab-content" id="login">
+            <div class="welcome-text">
+                <h3>Welcome Back</h3>
+                <span>Don't have an account? <a href="{{ url_for('register') }}">Sign Up Now!</a></span>
+            </div>
+            <form method="POST" action="{{ url_for('login') }}">
+                {{ form.csrf_token }}
+                <div class="input-with-icon-left">
+                    <i class="la la-user"></i>
+                    {{ form.username(class="input-text with-border", placeholder="Username / Email", required="required") }}
+                </div>
+
+                <div class="input-with-icon-left">
+                    <i class="la la-unlock"></i>
+                    {{ form.password(class="input-text with-border", placeholder="Password", required="required") }}
+                </div>
+                <a href="login?fstart=1" class="forgot-password">Forgot Password</a>
+                <input type="hidden" name="ref" value="{{ REF }}" />
+                <button class="button ripple-effect" type="submit" name="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

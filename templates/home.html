@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block content %}      
+  <div class="intro-banner" data-background-image="{{ url_for('static', filename='resources/banner/bg.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-headline">
+                        <h3><strong>Find Your Dream Home</strong><br>
+                            <span>Search thousands of Properties all in one place</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form autocomplete="off" method="GET" action="{{ url_for('recommendations') }}">
+                        <div class="intro-banner-search-form margin-top-45">
+                            <div class="intro-search-field">
+                                <input id="intro-keywords" type="text" class="qucikad-ajaxsearch-input" name="keywords" placeholder="What are you looking for?" data-prev-value="0" data-noresult="More results for">
+                                <i class="qucikad-ajaxsearch-close fa fa-times-circle" aria-hidden="true" style="display: none;"></i>
+                                <div id="qucikad-ajaxsearch-dropdown" size="0" tabindex="0">
+                                    <ul>
+                                        <li class="qucikad-ajaxsearch-li-cats" data-catid="for-sell">
+                                            <img src="http://quickhomes.bylancer.com/storage/icons/sell.png"/>
+                                            <span class="qucikad-as-cat">Has an Elevator[TRUE] </span>
+                                        </li>
+                                        <li class="qucikad-ajaxsearch-li-cats" data-catid="for-rent">
+                                            <img src="http://quickhomes.bylancer.com/storage/icons/rent.png"/>
+                                            <span class="qucikad-as-cat">Has an Elevator[FALSE] </span>
+                                        </li>
+                                    </ul>
+                                    <div style="display:none" id="def-cats"></div>
+                                </div>
+                            </div>
+                            <div class="intro-search-field with-autocomplete live-location-search">
+                                <div class="input-with-icon">
+                                    <input type="text" id="searchStateCity" name="location" placeholder="Where">
+                              </div>
+                            </div>
+                            <div class="intro-search-button">
+                                <button class="button ripple-effect" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<!-- Category Boxes -->
+  <div class="section margin-top-65 d-none">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12">
+                  <div class="section-headline centered margin-bottom-15">
+                      <h3>All Categories</h3>
+                  </div>
+                  <div class="categories-container">
+                      
+                          <a href="category/for-sell" class="category-box">
+                              <div class="category-box-icon margin-bottom-10">
+                                                                  <div class="category-icon"><img src="http://quickhomes.bylancer.com/storage/icons/sell.png"/></div>
+                                                              </div>
+                              <div class="category-box-counter">0</div>
+                              <div class="category-box-content">
+                                  <h3>For Sell <small>(0)</small></h3>
+                              </div>
+                              <div class="category-box-arrow">
+                                  <i class="fa fa-chevron-right"></i>
+                              </div>
+                          </a>
+                      
+                          <a href="category/for-rent" class="category-box">
+                              <div class="category-box-icon margin-bottom-10">
+                                                                  <div class="category-icon"><img src="http://quickhomes.byabeja.com/resources/icons//rent.png"/></div>
+                                                              </div>
+                              <div class="category-box-counter">0</div>
+                              <div class="category-box-content">
+                                  <h3>For Rent <small>(0)</small></h3>
+                              </div>
+                              <div class="category-box-arrow">
+                                  <i class="fa fa-chevron-right"></i>
+                              </div>
+                          </a>
+                      
+                  </div>
+                              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="section gray padding-top-55 padding-bottom-65">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12">
+                  <div class="section-headline centered margin-top-0 margin-bottom-45">
+                      <h3>Recent Blog</h3>
+                  </div>
+                  <div class="listings-container grid-layout grid-layout-3">
+                      
+                          <div class="job-listing blog-listing">
+                              <div class="job-listing-details">
+                                                                  <div class="job-listing-company-logo">
+                                      <a href="#">
+                                                                        <img src="{{ url_for('static', filename='resources/blog/default.png') }}" alt="Property Brokerage Insights"/>
+
+                                                                      
+                                                                      </a>
+                                  </div>
+                                                                  <div class="job-listing-description">
+                                      <div class="blog-cat"><a href="#">Lifestyle</a>, <a href="#">Fashion</a></div>
+                                      <h3 class="job-listing-title"><a href="#">Property Brokerage Insights</a>
+                                      </h3>
+  
+                                      <p class="job-listing-text margin-top-10">Unlock the Secrets of the UK Property Market: Explore our Latest Blog Posts and Stay Ahead of the Game with Property Brokerage.</p>
+                                  </div>
+                              </div>
+                              <div class="job-listing-footer">
+                                  <ul>
+                                      <li>
+                                         <img src="{{ url_for('static', filename='resources/testimonials/2.png') }}" class="author-avatar">
+                                          by
+                                          <a href="#">Admin</a>
+                                      </li>
+                                      <li><i class="la la-clock-o"></i> 3 weeks ago</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      
+                  </div>
+                              </div>
+          </div>
+      </div>
+  </div>
+  <!-- footer -->
+  {% endblock %}

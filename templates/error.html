@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Error</h4>
+      <p>An error occurred while processing your request.</p>
+      <hr>
+      <p class="mb-0">Debug Response:</p>
+      <pre>{{ error }}</pre>
+    </div>
+  </div>
+{% endblock %}
+

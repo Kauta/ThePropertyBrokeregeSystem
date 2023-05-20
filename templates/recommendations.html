@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2 class="mt-4 mb-3">Recommended Properties</h2>
+    {% if recommendations.empty %}
+      <div class="alert alert-warning" role="alert">
+        No recommendations found.
+      </div>
+    {% else %}
+      <div class="row">
+        {% for recommendation in recommendations.iterrows() %}
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="{{ recommendation[1]['image_url'] }}" alt="{{ recommendation[1]['property_name'] }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ recommendation[1]['item_id'] }}</h5>
+                <p class="card-text">{{ recommendation[1]['deposit'] }}</p>
+                <p class="card-text">Price: ${{ recommendation[1]['monthly_rent'] }}</p>
+                <p class="card-text">Location: {{ recommendation[1]['district_uuid'] }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
